@@ -37,3 +37,5 @@
 ## Partie 3 : Lecteurs réseaux
 
 #### Q.1.3.1
+
+![Capture d'écran 2025-01-17 132348](https://github.com/user-attachments/assets/326ab04e-a211-4eb1-b458-6609a1ef22a5)
