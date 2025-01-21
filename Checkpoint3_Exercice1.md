@@ -7,7 +7,7 @@
 ![Capture d'écran 2025-01-17 095414](https://github.com/user-attachments/assets/b9de9bd9-24b5-4587-b3e5-69d88d37f53a)
 
 #### Q.1.1.2
-
+Je n'oublie de faire un clic droit "Disable Account" sur Kelly.Rhameur
 ![Capture d'écran 2025-01-17 095752](https://github.com/user-attachments/assets/c0e9137f-e4f6-4c9d-bc80-42cf34304b5e)
 
 #### Q.1.1.3
