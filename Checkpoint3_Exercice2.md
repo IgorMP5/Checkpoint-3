@@ -8,6 +8,8 @@
 
 #### Q.2.1.2
 
+Pour mon compte à usage personnel, je lui donnerais le moindre privilège pour qu'il ait accès juste a ce dont il a besoin. Je mettrais également un mot de passe robuste.
+
 ## Partie 2 : Configuration de SSH
 
 #### Q.2.2.1
@@ -36,6 +38,9 @@
 
 #### Q.2.3.3
 
+![Capture d'écran 2025-01-21 171033](https://github.com/user-attachments/assets/6c1e216a-5cfa-4e62-afac-c1ff6c1668be)
+
+
 #### Q.2.3.4
 
 ![Capture d'écran 2025-01-17 124619](https://github.com/user-attachments/assets/d3b4446a-50e9-43d0-a62e-41fc225c4f71)
@@ -49,17 +54,43 @@
 
 #### Q.2.4.1
 
+Bareos-dir (Director): Composant central qui gère la configuration, la planification des travaux de
+sauvegarde
+Bareos-sd (Storage Daemon): Responsable du stockage physique des données de sauvegarde sur
+les supports de stockage qu'il reçoit des clients.
+Bareos-fd (File Daemon): C'est l'agent installé sur chaque client qui permet à Bareos-dir de gérer les
+sauvegardes.
+
 ## Partie 5 : Filtrage et analyse réseau
 
 #### Q.2.5.1
 
+![Capture d'écran 2025-01-21 172151](https://github.com/user-attachments/assets/d8c2df63-71ce-4d82-8c9b-57a163932ef1)
+
 #### Q.2.5.2
+
+ct state established, related accept : les retours de connexions déjà établies.
+
+iifname "lo" accept autorise le trafic local.
+
+TCP dport 22 accept autorise les connexions TCP destinées au port 22 (port SSH).
+
+IP protocol icmp accept autorise les pings IPV4.
+
+IP6 nexthdr icmpv6 accept autorise les pings IPV6.
+
 
 #### Q.2.5.3
 
+ct state invalid drop : les paquets ne pouvant pas être identifiés à une requêtes.
+Et tout le reste qui n'est pas en accept.
+
 #### Q.2.5.4
+
+nft add rule inet inet_filter_table in_chain tcp dport { 9101-9103 } ct state new accept
 
 ## Partie 6 : Analyse de logs
 
 #### Q.2.6.1
 
+journalctl -u ssh | grep 'Failed password' | tail
